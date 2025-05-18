@@ -2,9 +2,6 @@ import unittest
 from htmlnode import HTMLNode, LeafNode, ParentNode
 
 class TestHTMLNode(unittest.TestCase):
-
-#Tests for HTMLNode
-
     def test_eq_html(self):
         node = HTMLNode(tag=None, value=None, children=None, props=None)
         node2 = HTMLNode()
@@ -24,8 +21,7 @@ class TestHTMLNode(unittest.TestCase):
         node = HTMLNode(children = 'fgh', tag = 'a')
         self.assertRaises(NotImplementedError,node.to_html)
 
-#Tests for LeafNode
-
+class TestLeafNode(unittest.TestCase):
     def test_eq_leaf(self):
         node = LeafNode("p", "Hello, world!")
         self.assertEqual(node.to_html(), "<p>Hello, world!</p>")
@@ -49,8 +45,7 @@ class TestHTMLNode(unittest.TestCase):
         node = LeafNode("a", "Click me!", {"href": "https://www.google.com", "attr": "more"})
         self.assertEqual(node.to_html(), '<a href="https://www.google.com" attr="more">Click me!</a>')
 
-#Tests for ParentNode
-
+class TestParentNode(unittest.TestCase):
     def test_to_html_many_children(self):
         nodes = ParentNode(
             "p",[
