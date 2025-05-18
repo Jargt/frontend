@@ -1,5 +1,13 @@
 # frontend
-A markdown to HTML converter
+A markdown to HTML converter - a Boot.dev project
+
+
+Just used this as a dumping ground for the syntax used and useful info:
+
+An HTMLNode without a tag will just render as raw text
+An HTMLNode without a value will be assumed to have children
+An HTMLNode without children will be assumed to have a value
+An HTMLNode without props simply won't have any attributes
 
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>

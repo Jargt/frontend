@@ -1,7 +1,5 @@
 import unittest
-
 from textnode import TextNode, TextType
-
 
 class TestTextNode(unittest.TestCase):
     def test_eq(self):
@@ -22,8 +20,5 @@ class TestTextNode(unittest.TestCase):
         node10 = TextNode("This is a Text Node", TextType.BOLD, url='Not a real URL')
         self.assertNotEqual(node9, node10)
         
-        
-
-
 if __name__ == "__main__":
     unittest.main()
